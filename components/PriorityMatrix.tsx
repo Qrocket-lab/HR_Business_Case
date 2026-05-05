@@ -206,15 +206,16 @@ export default function PriorityMatrix() {
                       </div>
 
                       {/* Static callout for Manager Turnover */}
-                      {'callout' in p && (
+                      {(p as { callout?: string }).callout && (
                         <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 z-30 w-36 bg-rose-950/90 border border-rose-700/60 rounded-lg px-2.5 py-1.5 pointer-events-none">
                           <p className="text-rose-300 text-[9px] leading-snug font-medium">
-                            {(p as typeof p & { callout: string }).callout}
+                            {(p as { callout?: string }).callout}
                           </p>
                         </div>
                       )}
                     </div>
-                  );}}
+                  );
+                  })}
                 </div>
 
                 {/* X-axis labels */}
