@@ -123,14 +123,11 @@ export default function BudgetSection() {
                   Key Insight
                 </p>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Replacing just{' '}
-                  <span className="text-white font-semibold">1,000 employees</span> (20% of
-                  5,000) costs approximately{' '}
-                  <span className="text-rose-400 font-semibold">IDR 270 Billion</span> in
-                  recruitment, onboarding, and lost productivity — making the IDR 2B
-                  intervention a{' '}
-                  <span className="text-emerald-400 font-semibold">135× more cost-effective</span>{' '}
-                  alternative.
+                  Projected cost avoidance of{' '}
+                  <span className="text-emerald-400 font-semibold">IDR 122B in year one</span>{': '}
+                  a{' '}
+                  <span className="text-emerald-400 font-semibold">60x return</span>{' '}
+                  on the IDR 2B investment.
                 </p>
               </div>
             </div>

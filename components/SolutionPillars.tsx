@@ -12,6 +12,7 @@ const pillars = [
       'Implement a 6-month intensive training program for the top 20% of "high-readiness" employees, creating a certified talent vanguard to lead the digital transition.',
     actions: [
       'Partner with leading digital bootcamps for fintech certifications',
+      'High-readiness = employees scoring in the top quartile on a digital aptitude assessment (combining learning agility and current tech proficiency).',
       'Focus on modern financial systems, digital banking & compliance tools',
       'Target the top 20% of high-readiness employees in Cohort 1',
       'Phased rollout to all 5,000 employees over 18 months',
@@ -89,7 +90,7 @@ export default function SolutionPillars() {
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             A coordinated intervention targeting skills capability, talent intelligence, and
-            leadership resilience — simultaneously.
+            leadership resilience, simultaneously.
           </p>
         </div>
 
@@ -121,12 +122,20 @@ export default function SolutionPillars() {
 
                 {/* Action checklist */}
                 <div className="space-y-2.5 flex-1">
-                  {p.actions.map((action, i) => (
-                    <div key={i} className="flex items-start gap-2.5">
-                      <CheckCircle size={14} className={`${p.checkColor} flex-shrink-0 mt-0.5`} />
-                      <span className="text-slate-300 text-sm leading-snug">{action}</span>
-                    </div>
-                  ))}
+                  {p.actions.map((action, i) => {
+                    // Pillar 1, index 1 is the high-readiness definition note
+                    const isNote = p.num === '01' && i === 1;
+                    return isNote ? (
+                      <div key={i} className="ml-6 pl-3 border-l border-slate-700/60">
+                        <p className="text-slate-500 text-xs leading-relaxed italic">{action}</p>
+                      </div>
+                    ) : (
+                      <div key={i} className="flex items-start gap-2.5">
+                        <CheckCircle size={14} className={`${p.checkColor} flex-shrink-0 mt-0.5`} />
+                        <span className="text-slate-300 text-sm leading-snug">{action}</span>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 {/* Budget footer */}

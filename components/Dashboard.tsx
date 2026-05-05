@@ -85,12 +85,15 @@ export default function Dashboard() {
   const [trainingCompletion, setTrainingCompletion] = useState(50);
 
   const calc = useMemo(() => {
-    const retained = Math.round(TOTAL_EMPLOYEES * (turnoverReduction / 100));
+    // Target headcount from turnover reduction slider
+    const targetRetained = Math.round(TOTAL_EMPLOYEES * (turnoverReduction / 100));
+    // Training completion determines how many actually complete the program and benefit
+    const retained = Math.round(targetRetained * (trainingCompletion / 100));
     const costAvoidance = retained * COST_PER_REPLACEMENT;
     const netImpact = costAvoidance - HR_INVESTMENT;
     const projectedCost = (CURRENT_EXITS - retained) * COST_PER_REPLACEMENT;
-    return { retained, costAvoidance, netImpact, projectedCost };
-  }, [turnoverReduction]);
+    return { retained, targetRetained, costAvoidance, netImpact, projectedCost };
+  }, [turnoverReduction, trainingCompletion]);
 
   const chartData = [
     { name: 'Current Annual Cost', value: CURRENT_TURNOVER_COST / 1_000_000_000, color: '#f43f5e' },
@@ -173,7 +176,7 @@ export default function Dashboard() {
               <div className="divide-y divide-slate-700/60">
                 {[
                   { label: 'Total Employees', value: '5,000' },
-                  { label: 'Current Turnover Rate', value: '20% — 1,000 exits / yr' },
+                  { label: 'Current Turnover Rate', value: '20% (1,000 exits per year)' },
                   { label: 'Avg. Monthly Salary', value: 'IDR 15,000,000' },
                   { label: 'Replacement Cost Multiplier', value: '1.5x annual salary' },
                   { label: 'Cost per Replacement', value: 'IDR 270,000,000' },
@@ -223,13 +226,24 @@ export default function Dashboard() {
                   <p className="text-slate-400 text-xs leading-relaxed">
                     Each employee replacement costs{' '}
                     <span className="text-slate-200 font-semibold">~IDR 270M</span> annually.
-                    Reducing turnover by{' '}
+                    Targeting{' '}
                     <span className="text-emerald-400 font-semibold">{turnoverReduction}%</span>{' '}
-                    prevents{' '}
-                    <span className="text-emerald-400 font-semibold">~{calc.retained.toLocaleString()} exits</span>,
-                    resulting in significant cost avoidance.
+                    reduction with{' '}
+                    <span className="text-blue-400 font-semibold">{trainingCompletion}%</span>{' '}
+                    training completion retains{' '}
+                    <span className="text-emerald-400 font-semibold">~{calc.retained.toLocaleString()} employees</span>{' '}
+                    in practice.
                   </p>
                 </div>
+              </div>
+
+              {/* 9% footnote */}
+              <div className="bg-slate-900/40 border border-slate-700/40 rounded-xl p-4">
+                <p className="text-slate-500 text-xs leading-relaxed italic">
+                  Note: The 9-percentage-point drop is modelled by combining upskilling impact
+                  (reduced voluntary attrition among trainees) and the ripple effect of halving
+                  manager churn on team-level turnover.
+                </p>
               </div>
             </div>
           </div>

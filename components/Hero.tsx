@@ -81,7 +81,7 @@ export default function Hero() {
         </p>
         <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
           A critical inflection point where a 5,000-employee legacy workforce must transition into
-          a tech-forward banking leader — backed by a data-driven IDR 2 Billion strategy.
+          a tech-forward banking leader, backed by a data-driven IDR 2 Billion strategy.
         </p>
 
         {/* Stat cards */}

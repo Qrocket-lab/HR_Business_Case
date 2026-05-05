@@ -23,6 +23,7 @@ const problems = [
     priority: 'top',
     Icon: TrendingDown,
     desc: 'Implementation stress driving 20% churn in critical layer',
+    callout: 'Manager turnover is the single biggest multiplier of team disengagement.',
   },
   {
     id: 3,
@@ -32,7 +33,7 @@ const problems = [
     y: 50,
     priority: 'medium',
     Icon: AlertCircle,
-    desc: 'Engagement at 60% — downstream effect of gaps above',
+    desc: 'Engagement at 60%, a downstream effect of the gaps above',
   },
 ];
 
@@ -203,8 +204,17 @@ export default function PriorityMatrix() {
                           </div>
                         </div>
                       </div>
-                    );
-                  })}
+
+                      {/* Static callout for Manager Turnover */}
+                      {'callout' in p && (
+                        <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 z-30 w-36 bg-rose-950/90 border border-rose-700/60 rounded-lg px-2.5 py-1.5 pointer-events-none">
+                          <p className="text-rose-300 text-[9px] leading-snug font-medium">
+                            {(p as typeof p & { callout: string }).callout}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  );}}
                 </div>
 
                 {/* X-axis labels */}

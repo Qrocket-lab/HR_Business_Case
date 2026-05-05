@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Project Horizon | ABC Corporation HR Strategy',
   description:
-    'Re-engineering the Employee Lifecycle for a Digital Era — A comprehensive HR intervention strategy for ABC Corporation.',
+    'Re-engineering the Employee Lifecycle for a Digital Era: A comprehensive HR intervention strategy for ABC Corporation.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

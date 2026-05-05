@@ -6,7 +6,7 @@ const takeaways = [
   {
     number: '01',
     headline: 'Close the Fintech Skills Gap',
-    body: 'Closing the fintech skills gap is the highest-impact intervention — directly enabling the technology transition and reducing capability-driven attrition.',
+    body: 'Closing the fintech skills gap is the highest-impact intervention, directly enabling the technology transition and reducing capability-driven attrition.',
   },
   {
     number: '02',
@@ -16,7 +16,7 @@ const takeaways = [
   {
     number: '03',
     headline: 'Embed Data-Driven HR',
-    body: 'Data-driven HR enables measurable and scalable impact — shifting HR from a cost center to a strategic lever with clear accountability.',
+    body: 'Data-driven HR enables measurable and scalable impact, shifting HR from a cost center to a strategic lever with clear accountability.',
   },
 ];
 
@@ -120,6 +120,21 @@ export default function Conclusion() {
               </span>
               <ArrowRight size={14} className="text-emerald-400" />
             </div>
+          </div>
+        </div>
+
+        {/* ── Prepared By ─────────────────────────────────────────────────────── */}
+        <div className="flex items-center justify-between border-t border-slate-800 pt-8">
+          <div>
+            <p className="text-slate-500 text-xs font-semibold tracking-widest uppercase mb-1">
+              Prepared by
+            </p>
+            <p className="text-white font-bold text-lg">Qodri Muhamad</p>
+            <p className="text-slate-400 text-sm">Business Intelligence Analyst</p>
+          </div>
+          <div className="text-right">
+            <p className="text-slate-600 text-xs">Project Horizon</p>
+            <p className="text-slate-600 text-xs">ABC Corporation</p>
           </div>
         </div>
 

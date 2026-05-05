@@ -38,7 +38,7 @@ const steps = [
     icon: Flame,
     tag: 'The Crisis',
     title: '20% Manager Churn',
-    desc: 'Mid-level managers bear the full weight of implementation stress—accountable for results but lacking resources. This drives a devastating 20% churn rate in the organization\'s most critical layer.',
+    desc: 'Mid-level managers bear the full weight of implementation stress—accountable for results but lacking resources. This drives a devastating 20% churn rate in the organization\'s most critical layer. Assuming ~500 mid-level managers, this equals 100 departures per year.',
     iconBg: 'bg-rose-950/60',
     iconColor: 'text-rose-400',
     borderColor: 'border-rose-800/50',
@@ -63,7 +63,7 @@ export default function RootCause() {
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
             A{' '}
             <span className="text-rose-400 font-semibold">domino effect</span> triggered by a
-            single strategic gap — the absence of a workforce upskilling plan during technology
+            single strategic gap: the absence of a workforce upskilling plan during technology
             adoption.
           </p>
         </div>
@@ -142,7 +142,7 @@ export default function RootCause() {
           <div>
             <p className="text-white font-semibold text-sm mb-1">Core Insight</p>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Technology alone cannot drive transformation — people capability must evolve in
+              Technology alone cannot drive transformation; people capability must evolve in
               parallel with the tools they are expected to use. The absence of a structured
               upskilling roadmap created a compounding crisis that is now costing the organization
               its most experienced talent.
