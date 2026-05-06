@@ -18,7 +18,7 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 
-const SITE_URL   = 'https://hr-business-case.vercel.app/';
+const SITE_URL   = process.env.SITE_URL || 'https://hr-business-case.vercel.app/';
 const OUTPUT     = path.join(__dirname, 'Project-Horizon-HR-Case-Study.pdf');
 const TITLE      = 'Project Horizon – ABC Corporation HR Case Study';
 const DATE_LABEL = 'Strategic HR Initiative · May 2025';
@@ -95,6 +95,25 @@ async function generate() {
           margin:0 0 48px; text-align:center;
         ">ABC Corporation · Strategic HR Case Study</h2>
 
+        <div style="
+          margin:0 0 28px; text-align:center;
+          font-family:system-ui,sans-serif;
+        ">
+          <p style="
+            color:#64748b; font-size:11px;
+            letter-spacing:2px; text-transform:uppercase;
+            margin:0 0 8px;
+          ">Prepared by</p>
+          <p style="
+            color:#ffffff; font-size:20px;
+            font-weight:700; margin:0;
+          ">Qodri Muhamad</p>
+          <p style="
+            color:#94a3b8; font-size:13px;
+            margin:4px 0 0;
+          ">Business Intelligence Analyst</p>
+        </div>
+
         <a href="${siteUrl}" style="
           color:#60a5fa; font-family:system-ui,sans-serif;
           font-size:14px; text-decoration:underline;
@@ -115,10 +134,39 @@ async function generate() {
     cover.innerHTML = coverHTML;
     document.body.insertBefore(cover, document.body.firstChild);
 
-    // ── 3. Force each section onto its own A4-landscape page ─────────────
+    // ── 3. Force each section onto its own A4-landscape page and fit safely ─
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
+
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      // Measure natural size first (before any clipping styles are applied).
+      el.style.height = 'auto';
+      el.style.minHeight = '0';
+      el.style.maxHeight = 'none';
+      el.style.overflow = 'visible';
+
+      const naturalHeight = el.scrollHeight;
+      const naturalWidth = Math.max(el.scrollWidth, viewportWidth);
+
+      // Wrap existing content so we can scale contents without affecting page breaks.
+      const fitWrapper = document.createElement('div');
+      fitWrapper.style.width = '100%';
+      fitWrapper.style.height = 'auto';
+      fitWrapper.style.transformOrigin = 'top left';
+
+      while (el.firstChild) {
+        fitWrapper.appendChild(el.firstChild);
+      }
+      el.appendChild(fitWrapper);
+
+      const scale = Math.min(viewportWidth / naturalWidth, viewportHeight / naturalHeight, 1);
+      if (scale < 1) {
+        fitWrapper.style.transform = `scale(${scale})`;
+        fitWrapper.style.width = `${100 / scale}%`;
+      }
 
       el.style.pageBreakBefore = 'always';
       el.style.breakBefore     = 'page';
@@ -129,8 +177,6 @@ async function generate() {
       el.style.maxHeight       = '100vh';
       el.style.overflow        = 'hidden';
       el.style.boxSizing       = 'border-box';
-      el.style.paddingTop      = '24px';
-      el.style.paddingBottom   = '24px';
     });
 
     // ── 4. Global print-colour-fidelity rule ─────────────────────────────
