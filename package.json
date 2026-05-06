@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pdf": "node generate-pdf.js"
   },
   "dependencies": {
     "lucide-react": "^0.378.0",
