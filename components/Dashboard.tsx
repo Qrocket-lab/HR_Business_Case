@@ -81,8 +81,8 @@ function Slider({ label, min, max, step, value, onChange, display, accentCls, ac
 
 // â”€â”€â”€ Main Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function Dashboard() {
-  const [turnoverReduction, setTurnoverReduction] = useState(6);
-  const [trainingCompletion, setTrainingCompletion] = useState(50);
+  const [turnoverReduction, setTurnoverReduction] = useState(9);
+  const [trainingCompletion, setTrainingCompletion] = useState(100);
 
   const calc = useMemo(() => {
     // Target headcount from turnover reduction slider
