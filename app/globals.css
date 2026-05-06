@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* A4 landscape ratio per slide — ensures each section fills one page proportionally */
+section[id] {
+  min-height: calc(100vw * 210 / 297);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

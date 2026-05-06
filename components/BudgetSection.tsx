@@ -44,7 +44,7 @@ const allocations = [
 
 export default function BudgetSection() {
   return (
-    <section id="budget" className="py-24 px-4">
+    <section id="budget" className="py-12 px-4">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -62,11 +62,11 @@ export default function BudgetSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
           {/* Left: Summary card */}
-          <div className="space-y-6">
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 text-center">
+          <div className="flex flex-col gap-6 h-full">
+            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 text-center flex-1 flex flex-col justify-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-950/60 mb-5">
                 <DollarSign size={28} className="text-emerald-400" />
               </div>
@@ -134,11 +134,11 @@ export default function BudgetSection() {
           </div>
 
           {/* Right: Detailed breakdown */}
-          <div className="space-y-5">
+          <div className="flex flex-col gap-4 h-full">
             {allocations.map((a) => (
               <div
                 key={a.label}
-                className="bg-slate-800 border border-slate-700 rounded-2xl p-6"
+                className="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex-1 flex flex-col justify-between"
               >
                 <div className="flex items-start justify-between mb-4 gap-4">
                   <div className="flex-1">
