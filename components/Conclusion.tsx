@@ -22,28 +22,28 @@ const takeaways = [
 
 export default function Conclusion() {
   return (
-    <section id="conclusion" className="py-24 px-4 relative overflow-hidden">
+    <section id="conclusion" className="py-14 px-4 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#DEFF9A]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10 space-y-16">
+      <div className="max-w-6xl mx-auto relative z-10 space-y-10">
 
         {/* ── Header ──────────────────────────────────────────────────────────── */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Strategic Summary
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-3 mb-4 leading-tight">
             Conclusion &amp; Strategic Impact
           </h2>
           <p className="text-slate-400 text-lg leading-relaxed">
-            A targeted, evidence-based program to transform ABC Corporation's workforce
+            A targeted, evidence-based program to transform ABC Corporation&#39;s workforce
             into a competitive advantage in the digital banking era.
           </p>
-          <div className="w-16 h-0.5 bg-emerald-500 mx-auto mt-6" />
+          <div className="w-16 h-0.5 bg-[#DEFF9A] mx-auto mt-6" />
         </div>
 
         {/* ── Key Takeaways ───────────────────────────────────────────────────── */}
@@ -58,7 +58,7 @@ export default function Conclusion() {
             {takeaways.map((t) => (
               <div
                 key={t.number}
-                className="relative bg-slate-800/80 border border-slate-700 rounded-2xl p-7 flex flex-col gap-4 hover:border-emerald-700/60 transition-colors"
+                className="relative bg-[#3a3a3a]/80 border border-[#484848] rounded-2xl p-7 flex flex-col gap-4 hover:border-[#DEFF9A]/40 transition-colors"
               >
                 {/* Large number */}
                 <span className="text-6xl font-black text-slate-700/60 leading-none select-none">
@@ -72,7 +72,7 @@ export default function Conclusion() {
                 </div>
                 <CheckCircle2
                   size={16}
-                  className="text-emerald-500 absolute top-6 right-6"
+                  className="text-[#DEFF9A] absolute top-6 right-6"
                 />
               </div>
             ))}
@@ -80,24 +80,24 @@ export default function Conclusion() {
         </div>
 
         {/* ── Final Statement ─────────────────────────────────────────────────── */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-800/60 border border-slate-700 rounded-2xl p-10 flex flex-col md:flex-row gap-8 items-start md:items-center">
-          <Target size={40} className="text-emerald-400 flex-shrink-0" />
+<div className="bg-gradient-to-br from-[#3a3a3a] to-[#3a3a3a]/60 border border-[#484848] rounded-2xl p-10 flex flex-col md:flex-row gap-8 items-start md:items-center">
+          <Target size={40} className="text-[#DEFF9A] flex-shrink-0" />
           <div>
             <p className="text-base font-semibold text-slate-400 uppercase tracking-widest mb-3">
               Final Statement
             </p>
             <p className="text-white text-xl md:text-2xl font-semibold leading-relaxed">
               With a targeted{' '}
-              <span className="text-emerald-400 font-bold">IDR 2 Billion</span>{' '}
+              <span className="text-[#DEFF9A] font-bold">IDR 2 Billion</span>{' '}
               investment, ABC Corporation can reduce turnover, improve engagement,
               and accelerate its transition into a{' '}
-              <span className="text-emerald-400 font-bold">digital-first bank</span>.
+              <span className="text-[#DEFF9A] font-bold">digital-first bank</span>.
             </p>
           </div>
         </div>
 
         {/* ── Call to Action ──────────────────────────────────────────────────── */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-900/70 via-emerald-800/50 to-slate-800 border border-emerald-700/40 p-10 text-center">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#DEFF9A]/15 via-[#DEFF9A]/8 to-[#3a3a3a] border border-[#DEFF9A]/25 p-10 text-center">
           {/* Subtle grid overlay */}
           <div
             className="absolute inset-0 opacity-5"
@@ -107,7 +107,7 @@ export default function Conclusion() {
             }}
           />
           <div className="relative z-10 space-y-5">
-            <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase">
+            <p className="text-[#DEFF9A] text-xs font-bold tracking-widest uppercase">
               Call to Action
             </p>
             <p className="text-white text-2xl md:text-3xl font-extrabold leading-snug max-w-2xl mx-auto">
@@ -118,13 +118,13 @@ export default function Conclusion() {
               <span className="text-slate-400 text-sm">
                 Aligned with ABC Corporation&apos;s digital transformation mandate
               </span>
-              <ArrowRight size={14} className="text-emerald-400" />
+              <ArrowRight size={14} className="text-[#DEFF9A]" />
             </div>
           </div>
         </div>
 
         {/* ── Prepared By ─────────────────────────────────────────────────────── */}
-        <div className="flex items-center justify-between border-t border-slate-800 pt-8">
+          <div className="flex items-center justify-between border-t border-[#383838] pt-8">
           <div>
             <p className="text-slate-500 text-xs font-semibold tracking-widest uppercase mb-1">
               Prepared by

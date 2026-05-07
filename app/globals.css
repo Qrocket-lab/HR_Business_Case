@@ -6,21 +6,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* A4 landscape ratio per slide — ensures each section fills one page proportionally */
-section[id] {
-  min-height: calc(100vw * 210 / 297);
+body {
+  background: linear-gradient(180deg, #262626 0%, #333333 45%, #2d2d2d 100%);
+  background-attachment: fixed;
 }
+
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #1e1e1e;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #484848;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #DEFF9A;
 }

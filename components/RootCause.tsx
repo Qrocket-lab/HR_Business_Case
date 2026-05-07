@@ -49,11 +49,11 @@ const steps = [
 
 export default function RootCause() {
   return (
-    <section id="root-cause" className="py-24 px-4 relative">
+    <section id="root-cause" className="py-14 px-4 relative">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
+          <div className="text-center mb-10">
           <span className="text-rose-400 text-xs font-semibold tracking-widest uppercase">
             Root Cause Analysis
           </span>
@@ -79,7 +79,7 @@ export default function RootCause() {
               >
                 {/* Card */}
                 <div
-                  className={`flex-1 w-full bg-slate-800 border ${step.borderColor} rounded-2xl p-6 flex flex-col gap-3 h-full`}
+                  className={`flex-1 w-full bg-[#3a3a3a] border ${step.borderColor} rounded-2xl p-6 flex flex-col gap-3 h-full`}
                 >
                   <div className="flex items-start justify-between">
                     <div className={`${step.iconBg} rounded-xl p-2.5`}>

@@ -33,10 +33,10 @@ const kpiGroups = [
 
 const colorMap = {
   emerald: {
-    header:  'bg-emerald-950/50 border-b border-emerald-800/40',
-    icon:    'text-emerald-400',
-    target:  'text-emerald-400',
-    rowHover:'hover:bg-emerald-950/10',
+    header:  'bg-[#DEFF9A]/10 border-b border-[#DEFF9A]/20',
+    icon:    'text-[#DEFF9A]',
+    target:  'text-[#DEFF9A]',
+    rowHover:'hover:bg-[#DEFF9A]/5',
   },
   blue: {
     header:  'bg-blue-950/50 border-b border-blue-800/40',
@@ -55,12 +55,12 @@ const colorMap = {
 // ─── Component ─────────────────────────────────────────────────────────────────
 export default function SuccessMetrics() {
   return (
-    <section id="metrics" className="py-12 px-4">
+    <section id="metrics" className="py-8 px-4">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}
         <div className="mb-10">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Measurement Framework
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-3 leading-tight">
@@ -69,14 +69,14 @@ export default function SuccessMetrics() {
           <p className="text-slate-400 text-sm max-w-xl">
             Defined baselines and 6-month targets across all three strategic pillars.
           </p>
-          <div className="w-12 h-0.5 bg-emerald-500 mt-4" />
+          <div className="w-12 h-0.5 bg-[#DEFF9A] mt-4" />
         </div>
 
         {/* Table */}
-        <div className="rounded-2xl border border-slate-700 overflow-hidden">
+        <div className="rounded-2xl border border-[#484848] overflow-hidden">
 
           {/* Column headers */}
-          <div className="grid grid-cols-12 bg-slate-800/80 border-b border-slate-700 px-6 py-3">
+          <div className="grid grid-cols-12 bg-[#3a3a3a]/80 border-b border-[#484848] px-6 py-3">
             <div className="col-span-3 text-slate-500 text-xs font-semibold uppercase tracking-wider">
               Category
             </div>
@@ -111,7 +111,7 @@ export default function SuccessMetrics() {
                 {group.rows.map((row, ri) => (
                   <div
                     key={ri}
-                    className={`grid grid-cols-12 px-6 py-4 border-b border-slate-700/30 transition-colors ${c.rowHover}`}
+                    className={`grid grid-cols-12 px-6 py-4 border-b border-[#484848]/30 transition-colors ${c.rowHover}`}
                   >
                     <div className="col-span-3" />
                     <div className="col-span-5 flex items-center">
@@ -138,7 +138,7 @@ export default function SuccessMetrics() {
           })}
 
           {/* Optional row */}
-          <div className="grid grid-cols-12 px-6 py-3.5 bg-slate-800/20">
+          <div className="grid grid-cols-12 px-6 py-3.5 bg-[#3a3a3a]/20">
             <div className="col-span-3 flex items-center">
               <span className="text-slate-600 text-[10px] uppercase tracking-wider font-semibold">
                 Optional
@@ -158,14 +158,14 @@ export default function SuccessMetrics() {
         </div>
 
         {/* Financial impact */}
-        <div className="mt-6 bg-emerald-950/30 border border-emerald-800/30 rounded-xl px-6 py-4">
+        <div className="mt-6 bg-[#DEFF9A]/10 border border-[#DEFF9A]/20 rounded-xl px-6 py-4">
           <p className="text-slate-300 text-sm leading-relaxed text-center">
             Retaining{' '}
-            <span className="text-emerald-400 font-bold">450 employees</span>
+            <span className="text-[#DEFF9A] font-bold">450 employees</span>
             {' '}through these initiatives avoids{' '}
-            <span className="text-emerald-400 font-bold">IDR 122B</span>
+            <span className="text-[#DEFF9A] font-bold">IDR 122B</span>
             {' '}in annual replacement costs — a{' '}
-            <span className="text-emerald-400 font-bold">60× return</span>
+            <span className="text-[#DEFF9A] font-bold">60× return</span>
             {' '}on the IDR 2B investment.
           </p>
         </div>

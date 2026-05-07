@@ -15,13 +15,13 @@ const pillars = [
       'Target the top 20% of high-readiness employees in Cohort 1',
       'Phased rollout to all 5,000 employees over 18 months',
     ],
-    iconBg: 'bg-emerald-950/60',
-    iconColor: 'text-emerald-400',
-    borderColor: 'border-emerald-800/40',
-    tagBg: 'text-emerald-400 bg-emerald-950/40',
-    accentColor: 'text-emerald-400',
-    checkColor: 'text-emerald-500',
-    barColor: 'bg-emerald-500',
+    iconBg: 'bg-[#DEFF9A]/10',
+    iconColor: 'text-[#DEFF9A]',
+    borderColor: 'border-[#DEFF9A]/25',
+    tagBg: 'text-[#DEFF9A] bg-[#DEFF9A]/10',
+    accentColor: 'text-[#DEFF9A]',
+    checkColor: 'text-[#DEFF9A]',
+    barColor: 'bg-[#DEFF9A]',
   },
   {
     num: '02',
@@ -73,14 +73,14 @@ const pillars = [
 
 export default function SolutionPillars() {
   return (
-    <section id="solutions" className="py-12 px-4 relative">
+    <section id="solutions" className="py-8 px-4 relative">
       {/* Subtle section tint */}
-      <div className="absolute inset-0 bg-slate-800/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#404040]/10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-8">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+          <div className="text-center mb-6">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Strategic Interventions
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-4">
@@ -98,7 +98,7 @@ export default function SolutionPillars() {
             return (
               <div
                 key={p.num}
-                className={`bg-slate-800 border ${p.borderColor} rounded-2xl p-7 flex flex-col gap-5`}
+                className={`bg-[#3a3a3a] border ${p.borderColor} rounded-2xl p-7 flex flex-col gap-5`}
               >
                 {/* Top row */}
                 <div className="flex items-start justify-between">
@@ -129,7 +129,7 @@ export default function SolutionPillars() {
                 </div>
 
                 {/* Budget footer */}
-                <div className="mt-auto pt-5 border-t border-slate-700">
+                <div className="mt-auto pt-5 border-t border-[#484848]">
                   <div className="flex items-center justify-between mb-3">
                     <div>
                       <div className="text-slate-500 text-xs mb-0.5">Allocated Budget</div>
@@ -142,7 +142,7 @@ export default function SolutionPillars() {
                     </div>
                   </div>
                   {/* Mini bar */}
-                  <div className="w-full bg-slate-700 rounded-full h-1.5">
+                  <div className="w-full bg-[#484848] rounded-full h-1.5">
                     <div
                       className={`${p.barColor} h-1.5 rounded-full`}
                       style={{ width: p.budgetPct }}

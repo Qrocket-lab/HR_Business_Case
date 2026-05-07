@@ -5,9 +5,9 @@ const allocations = [
     label: 'Upskilling & Technical Training',
     amount: 'IDR 900M',
     pct: 45,
-    barColor: 'bg-emerald-500',
-    textColor: 'text-emerald-400',
-    tagBg: 'text-emerald-400 bg-emerald-950/40',
+    barColor: 'bg-[#DEFF9A]',
+    textColor: 'text-[#DEFF9A]',
+    tagBg: 'text-[#DEFF9A] bg-[#DEFF9A]/10',
     items: [
       'Digital bootcamp partnerships & licensing',
       'Fintech certification programs (500 initial trainees)',
@@ -44,11 +44,11 @@ const allocations = [
 
 export default function BudgetSection() {
   return (
-    <section id="budget" className="py-12 px-4">
+    <section id="budget" className="py-8 px-4">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
+          <div className="text-center mb-10">
           <span className="text-blue-400 text-xs font-semibold tracking-widest uppercase">
             Budget Breakdown
           </span>
@@ -57,7 +57,7 @@ export default function BudgetSection() {
           </h2>
           <p className="text-slate-400 text-lg">
             Optimizing an{' '}
-            <span className="text-emerald-400 font-semibold">IDR 2 Billion</span> investment
+            <span className="text-[#DEFF9A] font-semibold">IDR 2 Billion</span> investment
             across three strategic pillars.
           </p>
         </div>
@@ -66,9 +66,9 @@ export default function BudgetSection() {
 
           {/* Left: Summary card */}
           <div className="flex flex-col gap-6 h-full">
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 text-center flex-1 flex flex-col justify-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-950/60 mb-5">
-                <DollarSign size={28} className="text-emerald-400" />
+            <div className="bg-[#3a3a3a] border border-[#484848] rounded-2xl p-8 text-center flex-1 flex flex-col justify-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#DEFF9A]/10 mb-5">
+                <DollarSign size={28} className="text-[#DEFF9A]" />
               </div>
               <div className="text-5xl font-extrabold text-white mb-2">IDR 2.0B</div>
               <div className="text-slate-500 text-sm mb-8">Total Strategic Investment</div>
@@ -76,7 +76,7 @@ export default function BudgetSection() {
               {/* Stacked bar */}
               <div className="h-8 rounded-xl overflow-hidden flex w-full mb-3">
                 <div
-                  className="bg-emerald-500 h-full flex items-center justify-center"
+                  className="bg-[#DEFF9A] h-full flex items-center justify-center"
                   style={{ width: '45%' }}
                   title="Upskilling 45%"
                 >
@@ -114,19 +114,19 @@ export default function BudgetSection() {
             </div>
 
             {/* Key insight */}
-            <div className="bg-emerald-950/30 border border-emerald-800/30 rounded-2xl p-6 flex gap-4">
-              <div className="flex-shrink-0 bg-emerald-950/60 rounded-xl p-2.5 h-fit">
-                <Lightbulb size={18} className="text-emerald-400" />
+            <div className="bg-[#DEFF9A]/10 border border-[#DEFF9A]/20 rounded-2xl p-6 flex gap-4">
+              <div className="flex-shrink-0 bg-[#DEFF9A]/15 rounded-xl p-2.5 h-fit">
+                <Lightbulb size={18} className="text-[#DEFF9A]" />
               </div>
               <div>
-                <p className="text-emerald-400 text-xs font-semibold tracking-widest uppercase mb-2">
+                <p className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase mb-2">
                   Key Insight
                 </p>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Projected cost avoidance of{' '}
-                  <span className="text-emerald-400 font-semibold">IDR 122B in year one</span>{': '}
+                  <span className="text-[#DEFF9A] font-semibold">IDR 122B in year one</span>{': '}
                   a{' '}
-                  <span className="text-emerald-400 font-semibold">60x return</span>{' '}
+                  <span className="text-[#DEFF9A] font-semibold">60x return</span>{' '}
                   on the IDR 2B investment.
                 </p>
               </div>
@@ -138,7 +138,7 @@ export default function BudgetSection() {
             {allocations.map((a) => (
               <div
                 key={a.label}
-                className="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex-1 flex flex-col justify-between"
+                className="bg-[#3a3a3a] border border-[#484848] rounded-2xl p-6 flex-1 flex flex-col justify-between"
               >
                 <div className="flex items-start justify-between mb-4 gap-4">
                   <div className="flex-1">
@@ -155,7 +155,7 @@ export default function BudgetSection() {
                 </div>
 
                 {/* Progress bar */}
-                <div className="w-full bg-slate-700 rounded-full h-2 mb-5">
+                <div className="w-full bg-[#484848] rounded-full h-2 mb-5">
                   <div
                     className={`${a.barColor} h-2 rounded-full`}
                     style={{ width: `${a.pct}%` }}

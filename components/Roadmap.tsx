@@ -37,9 +37,9 @@ const timeline = [
 
 const colorMap = {
   emerald: {
-    dot: 'bg-emerald-400',
-    border: 'border-emerald-800/40',
-    tag: 'text-emerald-400 bg-emerald-950/40',
+    dot: 'bg-[#DEFF9A]',
+    border: 'border-[#DEFF9A]/25',
+    tag: 'text-[#DEFF9A] bg-[#DEFF9A]/10',
   },
   blue: {
     dot: 'bg-blue-500',
@@ -64,14 +64,14 @@ const kpis = [
     to: '15%',
     label: 'Annual Turnover Rate',
     note: 'Target reduction',
-    accentCls: 'text-emerald-400',
+    accentCls: 'text-[#DEFF9A]',
   },
   {
     from: '60%',
     to: '75%',
     label: 'Employee Engagement',
     note: 'Target improvement',
-    accentCls: 'text-emerald-400',
+    accentCls: 'text-[#DEFF9A]',
   },
   {
     from: '0%',
@@ -91,22 +91,22 @@ const alignmentPoints = [
 
 export default function Roadmap() {
   return (
-    <section id="roadmap" className="py-24 px-4 relative">
+    <section id="roadmap" className="py-14 px-4 relative">
       {/* Top ambient glow */}
       <div
         aria-hidden
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at center top, rgba(16,185,129,0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse at center top, rgba(222,255,154,0.05) 0%, transparent 70%)',
         }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+          <div className="text-center mb-10">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Slide 8
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-4">
@@ -114,22 +114,22 @@ export default function Roadmap() {
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             A clear execution path aligning with ABC Corporation's vision to become a{' '}
-            <span className="text-emerald-400 font-semibold">digital-first bank</span> while
+            <span className="text-[#DEFF9A] font-semibold">digital-first bank</span> while
             maintaining a stable, high-engagement culture.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
 
           {/* Timeline */}
           <div>
             <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
-              <Clock size={18} className="text-emerald-400" />
+              <Clock size={18} className="text-[#DEFF9A]" />
               Implementation Timeline
             </h3>
             <div className="relative space-y-4">
               {/* Vertical connector line */}
-              <div className="absolute left-5 top-6 bottom-6 w-px bg-slate-700" />
+              <div className="absolute left-5 top-6 bottom-6 w-px bg-[#484848]" />
 
               {timeline.map((item) => {
                 const c = colorMap[item.color];
@@ -140,8 +140,8 @@ export default function Roadmap() {
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${
                           item.status === 'active'
-                            ? `${c.dot} border-emerald-300`
-                            : 'bg-slate-700 border-slate-600'
+                            ? `${c.dot} border-[#e8ff9a]`
+                            : 'bg-[#484848] border-[#555555]'
                         }`}
                       >
                         {item.status === 'active' ? (
@@ -153,7 +153,7 @@ export default function Roadmap() {
                     </div>
 
                     {/* Card */}
-                    <div className={`flex-1 bg-slate-800 border ${c.border} rounded-xl p-4 mb-1`}>
+                    <div className={`flex-1 bg-[#3a3a3a] border ${c.border} rounded-xl p-4 mb-1`}>
                       <div className="flex flex-wrap items-center gap-2 mb-1.5">
                         <span
                           className={`text-xs font-semibold px-2 py-0.5 rounded-full ${c.tag}`}
@@ -161,7 +161,7 @@ export default function Roadmap() {
                           {item.phase}
                         </span>
                         {item.status === 'active' && (
-                          <span className="text-xs text-emerald-400 font-semibold animate-pulse">
+                          <span className="text-xs text-[#DEFF9A] font-semibold animate-pulse">
                             ▶ Initiate Now
                           </span>
                         )}
@@ -181,14 +181,14 @@ export default function Roadmap() {
             {/* KPI Targets */}
             <div>
               <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
-                <Target size={18} className="text-emerald-400" />
+                <Target size={18} className="text-[#DEFF9A]" />
                 Target KPIs
               </h3>
               <div className="space-y-4">
                 {kpis.map((k) => (
                   <div
                     key={k.label}
-                    className="bg-slate-800 border border-slate-700 rounded-xl p-4 flex items-center justify-between gap-4"
+                    className="bg-[#3a3a3a] border border-[#484848] rounded-xl p-4 flex items-center justify-between gap-4"
                   >
                     <div className="flex-1">
                       <div className="text-slate-300 text-sm font-semibold">{k.label}</div>
@@ -209,10 +209,10 @@ export default function Roadmap() {
             </div>
 
             {/* Strategic Alignment card */}
-            <div className="bg-gradient-to-br from-emerald-950/40 to-blue-950/40 border border-emerald-800/30 rounded-2xl p-6 flex-1">
+            <div className="bg-gradient-to-br from-[#DEFF9A]/8 to-blue-950/40 border border-[#DEFF9A]/20 rounded-2xl p-6 flex-1">
               <div className="flex items-center gap-2 mb-4">
-                <Star size={15} className="text-emerald-400" />
-                <span className="text-emerald-400 text-sm font-semibold">
+                <Star size={15} className="text-[#DEFF9A]" />
+                <span className="text-[#DEFF9A] text-sm font-semibold">
                   Strategic Alignment
                 </span>
               </div>
@@ -225,7 +225,7 @@ export default function Roadmap() {
               <div className="space-y-2.5">
                 {alignmentPoints.map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <CheckCircle size={13} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle size={13} className="text-[#DEFF9A] flex-shrink-0 mt-0.5" />
                     <span className="text-slate-400 text-xs leading-relaxed">{item}</span>
                   </div>
                 ))}
@@ -235,8 +235,8 @@ export default function Roadmap() {
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-gradient-to-r from-emerald-950/60 via-slate-800 to-blue-950/60 border border-emerald-800/30 rounded-2xl p-8 md:p-12 text-center">
-          <p className="text-emerald-400 text-xs font-semibold tracking-widest uppercase mb-4">
+          <div className="bg-gradient-to-r from-[#DEFF9A]/10 via-[#3a3a3a] to-blue-950/60 border border-[#DEFF9A]/20 rounded-2xl p-8 md:p-12 text-center">
+          <p className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase mb-4">
             Call to Action
           </p>
           <h3 className="text-white text-2xl md:text-4xl font-extrabold mb-4">
@@ -246,7 +246,7 @@ export default function Roadmap() {
             Finalize the Success Formula attributes and run baseline assessments on all 5,000
             employees to identify the first cohort of high-readiness talent.
           </p>
-          <div className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-8 py-3.5 rounded-full transition-colors text-sm cursor-pointer">
+          <div className="inline-flex items-center gap-2 bg-[#DEFF9A] hover:bg-[#e8ff9a] text-slate-900 font-bold px-8 py-3.5 rounded-full transition-colors text-sm cursor-pointer">
             Initiate Discovery Phase
             <ArrowRight size={16} />
           </div>

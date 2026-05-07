@@ -74,8 +74,8 @@ const milestones = [
     pct: 50,
     label: '50% training\ncompletion',
     Icon: Award,
-    color: 'text-emerald-400',
-    dotBg: 'bg-emerald-500',
+    color: 'text-[#DEFF9A]',
+    dotBg: 'bg-[#DEFF9A]',
   },
   {
     month: 'Month 6',
@@ -99,14 +99,14 @@ const colorMap = {
     num: 'text-blue-400',
   },
   emerald: {
-    bg: 'bg-emerald-950/30',
-    border: 'border-emerald-800/50',
-    iconBg: 'bg-emerald-950/60',
-    iconCls: 'text-emerald-400',
-    tag: 'text-emerald-400 bg-emerald-950/40',
-    dot: 'bg-emerald-500',
-    taskDot: 'bg-emerald-700',
-    num: 'text-emerald-400',
+    bg: 'bg-[#DEFF9A]/10',
+    border: 'border-[#DEFF9A]/25',
+    iconBg: 'bg-[#DEFF9A]/10',
+    iconCls: 'text-[#DEFF9A]',
+    tag: 'text-[#DEFF9A] bg-[#DEFF9A]/10',
+    dot: 'bg-[#DEFF9A]',
+    taskDot: 'bg-[#DEFF9A]/40',
+    num: 'text-[#DEFF9A]',
   },
   violet: {
     bg: 'bg-violet-950/30',
@@ -123,25 +123,25 @@ const colorMap = {
 // ─── Component ─────────────────────────────────────────────────────────────────
 export default function ImplementationRoadmap() {
   return (
-    <section id="implementation" className="py-24 px-4 relative">
+    <section id="implementation" className="py-14 px-4 relative">
       {/* Subtle tint */}
-      <div className="absolute inset-0 bg-slate-800/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#404040]/10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* ── Header ─────────────────────────────────────────────────────────── */}
         <div className="mb-16">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Implementation Roadmap
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-3 leading-tight">
             6-Month Execution Plan
           </h2>
-          <div className="w-12 h-0.5 bg-emerald-500 mt-4" />
+          <div className="w-12 h-0.5 bg-[#DEFF9A] mt-4" />
         </div>
 
         {/* ── Horizontal Timeline Bar ─────────────────────────────────────────── */}
-        <div className="relative mb-12">
+          <div className="relative mb-8">
           {/* Month tick labels */}
           <div className="flex justify-between mb-3 px-0">
             {['M1', 'M2', 'M3', 'M4', 'M5', 'M6'].map((m, i) => (
@@ -152,7 +152,7 @@ export default function ImplementationRoadmap() {
           </div>
 
           {/* Timeline rail */}
-          <div className="relative h-3 bg-slate-800 border border-slate-700 rounded-full overflow-hidden">
+          <div className="relative h-3 bg-[#3a3a3a] border border-[#484848] rounded-full overflow-hidden">
             {/* Phase fills */}
             {/* Phase 1: M1 → 0–16.6% */}
             <div
@@ -161,7 +161,7 @@ export default function ImplementationRoadmap() {
             />
             {/* Phase 2: M2–M4 → 16.6–66.6% */}
             <div
-              className="absolute top-0 bottom-0 bg-emerald-800/40"
+              className="absolute top-0 bottom-0 bg-[#DEFF9A]/15"
               style={{ left: '16.66%', width: '50%' }}
             />
             {/* Phase 3: M5–M6 → 66.6–100% */}
@@ -170,8 +170,8 @@ export default function ImplementationRoadmap() {
               style={{ left: '66.66%', width: '33.34%' }}
             />
             {/* Phase separators */}
-            <div className="absolute top-0 bottom-0 border-l border-slate-600" style={{ left: '16.66%' }} />
-            <div className="absolute top-0 bottom-0 border-l border-slate-600" style={{ left: '66.66%' }} />
+            <div className="absolute top-0 bottom-0 border-l border-[#555555]" style={{ left: '16.66%' }} />
+            <div className="absolute top-0 bottom-0 border-l border-[#555555]" style={{ left: '66.66%' }} />
           </div>
 
           {/* Milestone markers */}
@@ -184,7 +184,7 @@ export default function ImplementationRoadmap() {
               >
                 {/* Diamond marker */}
                 <div
-                  className={`w-3 h-3 rotate-45 ${m.dotBg} border-2 border-slate-900 mt-0`}
+                  className={`w-3 h-3 rotate-45 ${m.dotBg} border-2 border-[#282828] mt-0`}
                 />
                 <div className={`flex items-center gap-1 mt-1.5 ${m.color}`}>
                   <m.Icon size={10} />
@@ -253,7 +253,7 @@ export default function ImplementationRoadmap() {
           {milestones.map((m) => (
             <div
               key={m.month}
-              className="bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 flex items-center gap-4"
+              className="bg-[#3a3a3a] border border-[#484848] rounded-xl px-5 py-4 flex items-center gap-4"
             >
               <div
                 className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center ${m.dotBg} bg-opacity-20`}

@@ -47,7 +47,7 @@ const quadrants = [
   {
     label: 'Top Priority',
     corner: 'top-2 right-2',
-    textCls: 'text-emerald-600',
+    textCls: 'text-[#8cb030]',
     desc: 'High Impact · High Urgency',
   },
   {
@@ -66,18 +66,18 @@ const quadrants = [
 
 export default function PriorityMatrix() {
   return (
-    <section id="priority" className="py-24 px-4">
+    <section id="priority" className="py-14 px-4">
       <div className="max-w-6xl mx-auto">
 
         {/* ── Header ─────────────────────────────────────────────────────────── */}
-        <div className="mb-14">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+        <div className="mb-10">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Problem Prioritization
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-3 leading-tight">
             Where to Intervene First
           </h2>
-          <div className="w-12 h-0.5 bg-emerald-500 mt-4" />
+          <div className="w-12 h-0.5 bg-[#DEFF9A] mt-4" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
@@ -105,19 +105,19 @@ export default function PriorityMatrix() {
 
                 {/* Matrix grid */}
                 <div
-                  className="relative w-full border border-slate-700 rounded-2xl overflow-hidden"
+                  className="relative w-full border border-[#484848] rounded-2xl overflow-hidden"
                   style={{ aspectRatio: '1 / 1' }}
                 >
                   {/* Four quadrant backgrounds */}
                   <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
                     {/* Top-left: Monitor */}
-                    <div className="border-r border-b border-slate-700/60 bg-slate-800/50" />
+                    <div className="border-r border-b border-[#484848]/60 bg-[#3a3a3a]/50" />
                     {/* Top-right: Top Priority */}
-                    <div className="border-b border-slate-700/60 bg-emerald-950/20" />
+                    <div className="border-b border-[#484848]/60 bg-[#DEFF9A]/5" />
                     {/* Bottom-left: Deprioritize */}
-                    <div className="border-r border-slate-700/60 bg-slate-800/30" />
+                    <div className="border-r border-[#484848]/60 bg-[#3a3a3a]/30" />
                     {/* Bottom-right: Plan */}
-                    <div className="bg-slate-800/40" />
+                    <div className="bg-[#3a3a3a]/40" />
                   </div>
 
                   {/* Quadrant labels */}
@@ -140,9 +140,9 @@ export default function PriorityMatrix() {
                   {/* Centre divider labels */}
                   <div className="absolute inset-0 pointer-events-none">
                     {/* Horizontal mid-line dashed */}
-                    <div className="absolute left-0 right-0 top-1/2 border-t border-dashed border-slate-700/50" />
+                    <div className="absolute left-0 right-0 top-1/2 border-t border-dashed border-[#484848]/50" />
                     {/* Vertical mid-line dashed */}
-                    <div className="absolute top-0 bottom-0 left-1/2 border-l border-dashed border-slate-700/50" />
+                    <div className="absolute top-0 bottom-0 left-1/2 border-l border-dashed border-[#484848]/50" />
                   </div>
 
                   {/* Plotted points */}
@@ -161,14 +161,14 @@ export default function PriorityMatrix() {
                       >
                         {/* Pulse ring for top priority */}
                         {isTop && (
-                          <span className="absolute inset-0 rounded-full bg-emerald-400/20 animate-ping scale-[2.5]" />
+                          <span className="absolute inset-0 rounded-full bg-[#DEFF9A]/20 animate-ping scale-[2.5]" />
                         )}
 
                         {/* Dot */}
                         <div
                           className={`relative flex items-center justify-center rounded-full transition-transform group-hover:scale-110 z-10 ${
                             isTop
-                              ? 'w-11 h-11 bg-emerald-500 shadow-lg shadow-emerald-900/60'
+                              ? 'w-11 h-11 bg-[#DEFF9A] shadow-lg shadow-black/40'
                               : 'w-9 h-9 bg-slate-600 border border-slate-500'
                           }`}
                         >
@@ -187,13 +187,13 @@ export default function PriorityMatrix() {
                           <div
                             className={`rounded-xl p-3 border text-left shadow-xl ${
                               isTop
-                                ? 'bg-emerald-950 border-emerald-700/60'
-                                : 'bg-slate-800 border-slate-700'
+                                ? 'bg-[#1e2a00] border-[#DEFF9A]/30'
+                                : 'bg-[#3a3a3a] border-[#484848]'
                             }`}
                           >
                             <p
                               className={`text-xs font-bold mb-1 ${
-                                isTop ? 'text-emerald-400' : 'text-slate-300'
+                                isTop ? 'text-[#DEFF9A]' : 'text-slate-300'
                               }`}
                             >
                               {p.label}
@@ -238,16 +238,16 @@ export default function PriorityMatrix() {
                   key={p.id}
                   className={`rounded-2xl p-5 border flex gap-4 items-start transition-all ${
                     isTop
-                      ? 'bg-emerald-950/30 border-emerald-800/50'
-                      : 'bg-slate-800 border-slate-700'
+                      ? 'bg-[#DEFF9A]/10 border-[#DEFF9A]/25'
+                      : 'bg-[#3a3a3a] border-[#484848]'
                   }`}
                 >
                   {/* Number badge */}
                   <div
                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
                       isTop
-                        ? 'bg-emerald-500 text-slate-900'
-                        : 'bg-slate-700 text-slate-400'
+                        ? 'bg-[#DEFF9A] text-slate-900'
+                        : 'bg-[#484848] text-slate-400'
                     }`}
                   >
                     {i + 1}
@@ -257,17 +257,17 @@ export default function PriorityMatrix() {
                     <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                       <Icon
                         size={13}
-                        className={isTop ? 'text-emerald-400' : 'text-slate-400'}
+                        className={isTop ? 'text-[#DEFF9A]' : 'text-slate-400'}
                       />
                       <span
                         className={`text-sm font-bold ${
-                          isTop ? 'text-emerald-300' : 'text-slate-300'
+                          isTop ? 'text-[#DEFF9A]' : 'text-slate-300'
                         }`}
                       >
                         {p.label}
                       </span>
                       {isTop && (
-                        <span className="text-[9px] bg-emerald-500/20 text-emerald-400 border border-emerald-600/40 px-1.5 py-0.5 rounded-full font-semibold">
+                        <span className="text-[9px] bg-[#DEFF9A]/15 text-[#DEFF9A] border border-[#DEFF9A]/30 px-1.5 py-0.5 rounded-full font-semibold">
                           TOP PRIORITY
                         </span>
                       )}
@@ -277,7 +277,7 @@ export default function PriorityMatrix() {
                       <div>
                         <span className="text-slate-600">Impact </span>
                         <span
-                          className={isTop ? 'text-emerald-400 font-semibold' : 'text-amber-400 font-semibold'}
+                          className={isTop ? 'text-[#DEFF9A] font-semibold' : 'text-amber-400 font-semibold'}
                         >
                           {isTop ? 'High' : 'Medium'}
                         </span>
@@ -286,7 +286,7 @@ export default function PriorityMatrix() {
                       <div>
                         <span className="text-slate-600">Urgency </span>
                         <span
-                          className={isTop ? 'text-emerald-400 font-semibold' : 'text-amber-400 font-semibold'}
+                          className={isTop ? 'text-[#DEFF9A] font-semibold' : 'text-amber-400 font-semibold'}
                         >
                           {isTop ? 'High' : 'Medium'}
                         </span>
@@ -298,20 +298,20 @@ export default function PriorityMatrix() {
             })}
 
             {/* Insight box */}
-            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5">
+            <div className="bg-[#3a3a3a]/50 border border-[#484848] rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-3">
-                <ArrowRight size={13} className="text-emerald-400 flex-shrink-0" />
-                <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+                <ArrowRight size={13} className="text-[#DEFF9A] flex-shrink-0" />
+                <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
                   Key Insight
                 </span>
               </div>
               <p className="text-slate-300 text-sm leading-relaxed">
                 Primary focus must be on{' '}
-                <span className="text-emerald-400 font-semibold">
+                <span className="text-[#DEFF9A] font-semibold">
                   closing the fintech skills gap
                 </span>{' '}
                 and{' '}
-                <span className="text-emerald-400 font-semibold">
+                <span className="text-[#DEFF9A] font-semibold">
                   stabilizing mid-level leadership
                 </span>
                 , as these drive both turnover and engagement decline.

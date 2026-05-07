@@ -50,7 +50,7 @@ interface TTPayload { value: number }
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: TTPayload[]; label?: string }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-slate-800 border border-slate-600 rounded-xl px-4 py-3 shadow-2xl text-sm">
+    <div className="bg-[#3a3a3a] border border-[#555555] rounded-xl px-4 py-3 shadow-2xl text-sm">
       <p className="text-slate-400 mb-1 font-medium">{label}</p>
       <p className="text-white font-bold">{fmtIDR(payload[0].value * 1_000_000_000)}</p>
     </div>
@@ -69,7 +69,7 @@ function Slider({ label, min, max, step, value, onChange, display, accentCls, ac
       </div>
       <input type="range" min={min} max={max} step={step} value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-slate-700"
+        className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-[#484848]"
         style={{ accentColor: accentHex }}
       />
       <div className="flex justify-between text-[10px] text-slate-600 mt-1 font-mono">
@@ -97,7 +97,7 @@ export default function Dashboard() {
 
   const chartData = [
     { name: 'Current Annual Cost', value: CURRENT_TURNOVER_COST / 1_000_000_000, color: '#f43f5e' },
-    { name: 'Projected Annual Cost', value: calc.projectedCost / 1_000_000_000, color: '#10b981' },
+    { name: 'Projected Annual Cost', value: calc.projectedCost / 1_000_000_000, color: '#DEFF9A' },
   ];
 
   const kpiCards = [
@@ -106,27 +106,27 @@ export default function Dashboard() {
       title: 'Employees Retained',
       value: calc.retained.toLocaleString(),
       sub: `${turnoverReduction}% reduction from total workforce`,
-      accent: 'text-emerald-400',
-      border: 'border-emerald-800/40',
-      bg: 'bg-emerald-950/30',
+      accent: 'text-[#DEFF9A]',
+      border: 'border-[#DEFF9A]/25',
+      bg: 'bg-[#DEFF9A]/10',
     },
     {
       Icon: DollarSign,
       title: 'Estimated Cost Avoidance',
       value: fmtIDR(calc.costAvoidance),
       sub: 'Based on replacement cost per employee',
-      accent: 'text-emerald-400',
-      border: 'border-emerald-800/40',
-      bg: 'bg-emerald-950/30',
+      accent: 'text-[#DEFF9A]',
+      border: 'border-[#DEFF9A]/25',
+      bg: 'bg-[#DEFF9A]/10',
     },
     {
       Icon: TrendingUp,
       title: 'Net Financial Impact',
       value: (calc.netImpact >= 0 ? '+' : '') + fmtIDR(calc.netImpact),
       sub: 'After deducting IDR 2B investment',
-      accent: calc.netImpact >= 0 ? 'text-emerald-400' : 'text-rose-400',
-      border: calc.netImpact >= 0 ? 'border-emerald-800/40' : 'border-rose-800/40',
-      bg: calc.netImpact >= 0 ? 'bg-emerald-950/30' : 'bg-rose-950/30',
+      accent: calc.netImpact >= 0 ? 'text-[#DEFF9A]' : 'text-rose-400',
+      border: calc.netImpact >= 0 ? 'border-[#DEFF9A]/25' : 'border-rose-800/40',
+      bg: calc.netImpact >= 0 ? 'bg-[#DEFF9A]/10' : 'bg-rose-950/30',
     },
   ];
 
@@ -137,14 +137,14 @@ export default function Dashboard() {
   ];
 
   return (
-    <section id="roi" className="py-24 px-4 relative">
-      <div className="absolute inset-0 bg-slate-800/10 pointer-events-none" />
+    <section id="roi" className="py-14 px-4 relative">
+      <div className="absolute inset-0 bg-[#404040]/10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10 space-y-10">
+<div className="max-w-7xl mx-auto relative z-10 space-y-6">
 
         {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="max-w-3xl">
-          <span className="text-emerald-400 text-xs font-semibold tracking-widest uppercase">
+          <span className="text-[#DEFF9A] text-xs font-semibold tracking-widest uppercase">
             Financial Simulation
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-1 leading-tight">
@@ -156,7 +156,7 @@ export default function Dashboard() {
           <p className="text-slate-500 text-sm max-w-xl leading-relaxed mt-2">
             Estimating financial impact of reducing employee turnover through targeted HR interventions
           </p>
-          <div className="w-12 h-0.5 bg-emerald-500 mt-5" />
+          <div className="w-12 h-0.5 bg-[#DEFF9A] mt-5" />
         </div>
 
         {/* â”€â”€ Body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
@@ -166,14 +166,14 @@ export default function Dashboard() {
           <div className="lg:col-span-2 space-y-5">
 
             {/* Key Assumptions */}
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+            <div className="bg-[#3a3a3a] border border-[#484848] rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Info size={13} className="text-slate-500" />
                 <h3 className="text-slate-400 text-xs font-bold tracking-widest uppercase">
                   Key Assumptions
                 </h3>
               </div>
-              <div className="divide-y divide-slate-700/60">
+              <div className="divide-y divide-[#484848]/60">
                 {[
                   { label: 'Total Employees', value: '5,000' },
                   { label: 'Current Turnover Rate', value: '20% (1,000 exits per year)' },
@@ -191,9 +191,9 @@ export default function Dashboard() {
             </div>
 
             {/* Scenario Sliders */}
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 space-y-7">
+            <div className="bg-[#3a3a3a] border border-[#484848] rounded-2xl p-6 space-y-7">
               <div className="flex items-center gap-2">
-                <ChevronRight size={14} className="text-emerald-400" />
+                <ChevronRight size={14} className="text-[#DEFF9A]" />
                 <h3 className="text-slate-400 text-xs font-bold tracking-widest uppercase">
                   Scenario Inputs
                 </h3>
@@ -205,8 +205,8 @@ export default function Dashboard() {
                 value={turnoverReduction}
                 onChange={setTurnoverReduction}
                 display={`${turnoverReduction}%`}
-                accentCls="text-emerald-400"
-                accentHex="#10b981"
+                accentCls="text-[#DEFF9A]"
+                accentHex="#DEFF9A"
               />
 
               <Slider
@@ -220,25 +220,25 @@ export default function Dashboard() {
               />
 
               {/* Dynamic business logic note */}
-              <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-4">
+              <div className="bg-[#1c1c1c]/60 border border-[#484848]/60 rounded-xl p-4">
                 <div className="flex items-start gap-2.5">
                   <Lightbulb size={13} className="text-amber-400 flex-shrink-0 mt-0.5" />
                   <p className="text-slate-400 text-xs leading-relaxed">
                     Each employee replacement costs{' '}
                     <span className="text-slate-200 font-semibold">~IDR 270M</span> annually.
                     Targeting{' '}
-                    <span className="text-emerald-400 font-semibold">{turnoverReduction}%</span>{' '}
+                    <span className="text-[#DEFF9A] font-semibold">{turnoverReduction}%</span>{' '}
                     reduction with{' '}
                     <span className="text-blue-400 font-semibold">{trainingCompletion}%</span>{' '}
                     training completion retains{' '}
-                    <span className="text-emerald-400 font-semibold">~{calc.retained.toLocaleString()} employees</span>{' '}
+                    <span className="text-[#DEFF9A] font-semibold">~{calc.retained.toLocaleString()} employees</span>{' '}
                     in practice.
                   </p>
                 </div>
               </div>
 
               {/* 9% footnote */}
-              <div className="bg-slate-900/40 border border-slate-700/40 rounded-xl p-4">
+              <div className="bg-[#1c1c1c]/40 border border-[#484848]/40 rounded-xl p-4">
                 <p className="text-slate-500 text-xs leading-relaxed italic">
                   Note: The 9-percentage-point drop is modelled by combining upskilling impact
                   (reduced voluntary attrition among trainees) and the ripple effect of halving
@@ -271,7 +271,7 @@ export default function Dashboard() {
             </div>
 
             {/* Bar Chart */}
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+            <div className="bg-[#3a3a3a] border border-[#484848] rounded-2xl p-6">
               <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
                 <div>
                   <h3 className="text-white text-sm font-bold">
@@ -286,7 +286,7 @@ export default function Dashboard() {
                     <span className="text-slate-400">Current</span>
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-sm bg-[#DEFF9A] inline-block" />
                     <span className="text-slate-400">Projected</span>
                   </span>
                 </div>
@@ -294,10 +294,10 @@ export default function Dashboard() {
 
               <ResponsiveContainer width="100%" height={220}>
                 <BarChart data={chartData} margin={{ top: 20, right: 20, left: 0, bottom: 4 }} barSize={72}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                  <XAxis dataKey="name" stroke="#334155" tick={{ fill: '#64748b', fontSize: 11 }}
+                  <CartesianGrid strokeDasharray="3 3" stroke="#3d3d3d" vertical={false} />
+                  <XAxis dataKey="name" stroke="#484848" tick={{ fill: '#64748b', fontSize: 11 }}
                     tickLine={false} axisLine={false} />
-                  <YAxis stroke="#334155" tick={{ fill: '#64748b', fontSize: 11 }}
+                  <YAxis stroke="#484848" tick={{ fill: '#64748b', fontSize: 11 }}
                     tickLine={false} axisLine={false}
                     tickFormatter={(v: number) => `${v.toFixed(0)}B`} domain={[0, 320]} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.03)' }} />
@@ -312,8 +312,8 @@ export default function Dashboard() {
                 </BarChart>
               </ResponsiveContainer>
 
-              <div className="mt-3 pt-3 border-t border-slate-700/50 flex items-center gap-2">
-                <ArrowRight size={12} className="text-emerald-500 flex-shrink-0" />
+              <div className="mt-3 pt-3 border-t border-[#484848]/50 flex items-center gap-2">
+                <ArrowRight size={12} className="text-[#DEFF9A] flex-shrink-0" />
                 <p className="text-slate-400 text-xs">
                   Even a modest reduction in turnover delivers outsized financial impact.
                 </p>
@@ -321,15 +321,15 @@ export default function Dashboard() {
             </div>
 
             {/* Strategic Interpretation */}
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+            <div className="bg-[#3a3a3a] border border-[#484848] rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
-                <ChevronRight size={14} className="text-emerald-400" />
+                <ChevronRight size={14} className="text-[#DEFF9A]" />
                 <h3 className="text-white text-sm font-bold">Strategic Interpretation</h3>
               </div>
               <div className="space-y-3">
                 {interpretations.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 size={14} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={14} className="text-[#DEFF9A] flex-shrink-0 mt-0.5" />
                     <p className="text-slate-300 text-sm leading-relaxed">{item}</p>
                   </div>
                 ))}

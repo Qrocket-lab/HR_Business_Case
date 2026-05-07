@@ -29,15 +29,15 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-900/95 backdrop-blur-md border-b border-slate-800'
-          : 'bg-transparent'
+          ? 'bg-[#1c1c1c]/75 backdrop-blur-2xl saturate-150 border-b border-white/10 shadow-lg shadow-black/30'
+          : 'bg-[#1c1c1c]/10 backdrop-blur-sm border-b border-white/[0.04]'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#mandate" className="flex items-center gap-2 group">
-          <BarChart2 size={18} className="text-emerald-400" />
-          <span className="font-bold text-white text-sm tracking-wide group-hover:text-emerald-400 transition-colors">
+          <BarChart2 size={18} className="text-[#DEFF9A]" />
+          <span className="font-bold text-white text-sm tracking-wide group-hover:text-[#DEFF9A] transition-colors">
             Project Horizon
           </span>
           <span className="hidden sm:inline text-slate-600 text-xs ml-1">| ABC Corp</span>
@@ -49,14 +49,14 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-xs font-medium text-slate-400 hover:text-emerald-400 transition-colors tracking-wide"
+              className="text-xs font-medium text-slate-400 hover:text-[#DEFF9A] transition-colors tracking-wide"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#roi"
-            className="ml-2 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-4 py-1.5 rounded-full transition-colors"
+            className="ml-2 bg-[#DEFF9A]/10 border border-[#DEFF9A]/30 hover:bg-[#DEFF9A]/20 text-[#DEFF9A] text-xs font-semibold px-4 py-1.5 rounded-full transition-colors"
           >
             Live Dashboard ↗
           </a>
@@ -74,13 +74,13 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="lg:hidden bg-slate-900/98 backdrop-blur-md border-b border-slate-800 px-4 pb-4 space-y-1">
+        <div className="lg:hidden bg-[#1c1c1c]/85 backdrop-blur-2xl border-b border-white/10 px-4 pb-4 space-y-1">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-3 text-sm text-slate-400 hover:text-emerald-400 transition-colors border-b border-slate-800/50 last:border-0"
+              className="block py-3 text-sm text-slate-400 hover:text-[#DEFF9A] transition-colors border-b border-white/5 last:border-0"
             >
               {l.label}
             </a>
