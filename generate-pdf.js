@@ -18,7 +18,7 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 
-const SITE_URL   = process.env.SITE_URL || 'https://hr-business-case.vercel.app/';
+const SITE_URL   = process.env.SITE_URL || 'http://localhost:3000/';
 const OUTPUT     = path.join(__dirname, 'Project-Horizon-HR-Case-Study.pdf');
 const TITLE      = 'Project Horizon – ABC Corporation HR Case Study';
 const DATE_LABEL = 'Strategic HR Initiative · May 2025';
@@ -70,63 +70,149 @@ async function generate() {
     const coverHTML = `
       <div style="
         width:100%; height:100vh; min-height:100vh;
-        background:#0f172a;
+        background:linear-gradient(180deg, #262626 0%, #333333 45%, #2d2d2d 100%);
         display:flex; flex-direction:column;
         align-items:center; justify-content:center;
         page-break-after:always; break-after:page;
         position:relative; box-sizing:border-box;
-        padding:40px;
+        padding:60px 40px;
+        overflow:hidden;
       ">
-        <p style="
-          color:#10b981; font-family:system-ui,sans-serif;
-          font-size:12px; letter-spacing:4px;
-          text-transform:uppercase; margin:0 0 20px;
-        ">HR Case Study</p>
-
-        <h1 style="
-          color:#ffffff; font-family:system-ui,sans-serif;
-          font-size:56px; font-weight:800; line-height:1.1;
-          margin:0 0 12px; text-align:center;
-        ">Project Horizon</h1>
-
-        <h2 style="
-          color:#94a3b8; font-family:system-ui,sans-serif;
-          font-size:26px; font-weight:400;
-          margin:0 0 48px; text-align:center;
-        ">ABC Corporation · Strategic HR Case Study</h2>
-
+        <!-- Grid background -->
         <div style="
-          margin:0 0 28px; text-align:center;
-          font-family:system-ui,sans-serif;
+          position:absolute; inset:0;
+          background-image:linear-gradient(rgba(222,255,154,1) 1px, transparent 1px), linear-gradient(90deg, rgba(222,255,154,1) 1px, transparent 1px);
+          background-size:60px 60px;
+          opacity:0.035;
+          pointer-events:none;
+        "></div>
+
+        <!-- Radial glow -->
+        <div style="
+          position:absolute; top:30%; left:50%;
+          transform:translate(-50%, -50%);
+          width:800px; height:600px;
+          background:radial-gradient(ellipse at center, rgba(222,255,154,0.07) 0%, transparent 70%);
+          pointer-events:none;
+        "></div>
+
+        <!-- Content -->
+        <div style="
+          position:relative; z-index:10;
+          text-align:center;
         ">
+          <!-- Badge -->
+          <div style="
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            background:rgba(222,255,154,0.1);
+            border:1px solid rgba(222,255,154,0.2);
+            border-radius:9999px;
+            padding:6px 16px;
+            margin-bottom:40px;
+            font-family:system-ui,sans-serif;
+          ">
+            <span style="
+              display:inline-block;
+              width:8px; height:8px;
+              border-radius:50%;
+              background:#DEFF9A;
+              animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            "></span>
+            <span style="
+              color:#DEFF9A;
+              font-size:11px;
+              font-weight:600;
+              letter-spacing:1px;
+              text-transform:uppercase;
+            ">Strategic HR Case Study · ABC Corporation · FY2026</span>
+          </div>
+
+          <!-- Main headline -->
+          <h1 style="
+            font-family:system-ui,sans-serif;
+            font-size:88px;
+            font-weight:800;
+            line-height:1.05;
+            margin:0 0 24px;
+            color:#ffffff;
+          ">Project <span style="
+            background:linear-gradient(135deg, #DEFF9A, #a8f0ff);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+          ">Horizon</span></h1>
+
+          <!-- Subtitle -->
           <p style="
-            color:#64748b; font-size:11px;
-            letter-spacing:2px; text-transform:uppercase;
-            margin:0 0 8px;
-          ">Prepared by</p>
+            font-family:system-ui,sans-serif;
+            font-size:24px;
+            font-weight:600;
+            color:#cbd5e1;
+            margin:0 0 16px;
+            max-width:800px;
+          ">Re-engineering the Employee Lifecycle for a Digital Era</p>
+
+          <!-- Description -->
           <p style="
-            color:#ffffff; font-size:20px;
-            font-weight:700; margin:0;
-          ">Qodri Muhamad</p>
-          <p style="
-            color:#94a3b8; font-size:13px;
-            margin:4px 0 0;
-          ">Business Intelligence Analyst</p>
+            font-family:system-ui,sans-serif;
+            font-size:16px;
+            color:#94a3b8;
+            margin:0 0 48px;
+            max-width:700px;
+            line-height:1.6;
+          ">A critical inflection point where a 5,000-employee legacy workforce must transition into a tech-forward banking leader, backed by a data-driven IDR 2 Billion strategy.</p>
+
+          <!-- Author section -->
+          <div style="
+            margin:0 0 32px;
+            font-family:system-ui,sans-serif;
+          ">
+            <p style="
+              color:#64748b;
+              font-size:12px;
+              letter-spacing:2px;
+              text-transform:uppercase;
+              margin:0 0 8px;
+              font-weight:600;
+            ">Prepared by</p>
+            <p style="
+              color:#ffffff;
+              font-size:22px;
+              font-weight:700;
+              margin:0;
+            ">Qodri Muhamad</p>
+            <p style="
+              color:#94a3b8;
+              font-size:14px;
+              margin:4px 0 0;
+            ">Business Intelligence Analyst</p>
+          </div>
+
+          <!-- URL link -->
+          <a href="${siteUrl}" style="
+            display:inline-block;
+            color:#a8f0ff;
+            font-family:system-ui,sans-serif;
+            font-size:14px;
+            text-decoration:none;
+            background:rgba(168,240,255,0.08);
+            border:1px solid rgba(168,240,255,0.25);
+            padding:12px 24px;
+            border-radius:8px;
+            font-weight:500;
+          ">${siteUrl}</a>
         </div>
 
-        <a href="${siteUrl}" style="
-          color:#60a5fa; font-family:system-ui,sans-serif;
-          font-size:14px; text-decoration:underline;
-          background:rgba(96,165,250,0.08);
-          border:1px solid rgba(96,165,250,0.3);
-          padding:10px 22px; border-radius:8px;
-          display:inline-block;
-        ">${siteUrl}</a>
-
+        <!-- Footer -->
         <p style="
-          position:absolute; bottom:28px;
-          color:#475569; font-family:system-ui,sans-serif;
-          font-size:11px; margin:0;
+          position:absolute; bottom:32px;
+          color:#475569;
+          font-family:system-ui,sans-serif;
+          font-size:12px;
+          margin:0;
+          letter-spacing:0.5px;
         ">${dateLabel}</p>
       </div>
     `;
